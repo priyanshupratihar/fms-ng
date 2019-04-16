@@ -1,60 +1,226 @@
-<div class="container">
-  <div class="row">
-    <div class="col-lg-5">
-      <div class="position-fixed">
-        <div class="card">
-          <div class="card-header">
-            <h4>What is your issue?</h4>
-          </div>
-          <div class="card-body">
-            <div class="form-group row">
-              <label for="title" class="col-md-4">Title:</label>
-              <div class="col-md-8">
-                <input type="text" [formControl]="title" class="form-control form-control-lg">
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-danger.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body class="w3-theme-l5">
+
+  
+  <!-- Page Container -->
+  <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
+    <!-- The Grid -->
+    <div class="w3-row">
+      <!-- Left Column -->
+      <div class="w3-col m3">
+        <!-- Profile -->
+        <div class="w3-card w3-round w3-white">
+          <div class="w3-container">
+           <h4 class="w3-center">My Profile</h4>
+           <p class="w3-center"><img src="" class="w3-circle" style="height:106px;width:106px" alt="profile"></p>
+           <hr>
+          <!-- <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
+          <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>-->
+           <button data-toggle="collapse"  href="#settings" class="w3-button w3-left-align w3-theme-l1 "><i class="fa fa-cog fa-fw w3-margin-right w3-text-theme "></i>Settings</button>
+            <div id="settings" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <button data-toggle="modal" data-target="#modalLoginForm" class=" w3-button w3-left-align w3-theme-l1"><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i>Edit Details</button>
               </div>
+              <!--Modal-->
+              <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Edit Details</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+          <div class="md-form mb-5">
+              <label data-error="wrong" data-success="right" for="defaultForm-email">First Name</label>
+              <input type="email" id="defaultForm-email" class="form-control validate">
             </div>
-            <div class="form-group row">
-              <label for="description" class="col-md-4">Description:</label>
-              <div class="col-md-8">
-                <textarea class="form-control form-control-lg" [formControl]="description" cols="15"
-                  rows="4"></textarea>
+            <div class="md-form mb-5">
+                <label data-error="wrong" data-success="right" for="defaultForm-email">Last Name</label>
+                <input type="email" id="defaultForm-email" class="form-control validate">
               </div>
-            </div>
-          </div>
-          <div class="card-footer">
-            <div class="col-md-5 float-right">
-              <button class="btn btn-danger btn-lg btn-block" (click)="post()">Post</button>
-            </div>
-          </div>
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right" for="defaultForm-email"> email</label>
+          <input type="email" id="defaultForm-email" class="form-control validate">
         </div>
-      </div>
-    </div>
-    <!-- <div class="col-lg-7">
-      <div *ngIf="postsByOthers">
-        <div *ngFor="let post of postsByOthers">
-          <div class="card m-2 p-2">
-            <div class="card-header"><a href="#" class="text-dark">{{post.title}}</a></div>
-            <div class="card-body">
-              <div>{{post.description}}</div>
-              <div>
-                <div class="float-right">-<i>{{post.byFirstName}}</i></div>
-              </div>
-            </div>
-            <div class="card-footer"><a href="#">Read More..</a></div>
-          </div>
+
+        <div class="md-form mb-4">
+          <label data-error="wrong" data-success="right" for="defaultForm-pass"> password</label>
+          <input type="password" id="defaultForm-pass" class="form-control validate">
         </div>
+
+        <div class="md-form mb-5">
+            <label data-error="wrong" data-success="right" for="defaultForm-email">gender</label>
+            <input type="email" id="defaultForm-email" class="form-control validate">
+          </div>
+      </div>
+
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-default btn-danger">Save</button>
       </div>
     </div>
-  </div> -->
-    <div *ngIf="myPosts" class="col-md-5 m-4 p-2">
-      <div *ngFor="let post of myPosts">
-          <div class="card m-2 p-2">
-              <div class="card-header"><a href="#" class="text-dark">{{post.title}}</a></div>
-              <div class="card-body">
-                <div>{{post.description}}</div>
-              </div>
-              <div class="card-footer"><a href="#">Actions</a></div>
-            </div>
-      </div>
-    </div>
+  </div>
 </div>
+<!--End of Modal-->
+              
+           </div>
+          </div>
+        </div>
+        <br>
+        
+        <!-- Accordion -->
+        <div class="w3-card w3-round bg-danger">
+          <div class="w3-white">
+            <!--<button data-toggle="collapse"  href="#collapse1"class="w3-button w3-block w3-theme-l1 w3-left-align bg-danger"><i class="fa fa-users	
+              fa-fw w3-margin-right"></i>Following</button>
+              <div id="collapse1" class="panel-collapse collapse in">
+                  <div class="panel-body">Following</div>
+                </div>
+            <button data-toggle="collapse"  href="#collapse2" class="w3-button w3-block w3-theme-l1 w3-left-align bg-danger"><i class="fa fa-group fa-fw w3-margin-right"></i>Followers</button>
+            <div id="collapse2" class="panel-collapse collapse in">
+                <div class="panel-body">Followers</div>
+              </div>-->
+            <button data-toggle="collapse"  href="#collapse3" class="w3-button w3-block w3-theme-l1 w3-left-align bg-danger"><i class="fa fa-sticky-note w3-margin-right"></i> My Posts</button>
+            <div id="collapse3" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div *ngFor="let post of myPosts">
+
+                            <div class="card-header " ><a href="#" class="text-dark">{{post.title}}</a></div>
+                      </div>
+                          </div>
+              </div>          
+             
+           
+            </div>
+          </div>      
+        <br>
+        
+        <!-- Interests --> 
+        <div class="w3-card w3-round w3-white w3-hide-small">
+          <div class="w3-container">
+            <p>Interests</p>
+            <p>
+              <span class="w3-tag w3-small w3-theme-d5 bg-danger"></span>
+              
+            </p>
+          </div>
+        </div>
+        <br>
+        
+       
+      
+      <!-- End Left Column -->
+      </div>
+      
+        
+      <!-- Middle Column -->
+      <div class="w3-col m7">
+      
+          <div class="w3-row-padding">
+              <div class="w3-col m12">
+                <div class="w3-card w3-round w3-white">
+                  <div class="w3-container w3-padding form-group">
+                      <label for="title" class="col-md-4">Title:</label>
+                      <input type="text" [formControl]="title" class="form-control form-control-lg">
+                      <label for="description" class="col-md-4">Description:</label>
+
+                      <textarea class="form-control form-control-lg" [formControl]="description" cols="15"rows="4"></textarea>
+
+                      <button class="btn btn-danger btn-lg btn-block" (click)="post()">Post</button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+      
+          <div class="w3-row-padding">
+              <div class="w3-col m12">
+                <div class="w3-card w3-round w3-white">
+                  <div class="w3-container w3-padding form-group">
+                      <div *ngIf="myPosts" class=" w3-col m12">
+                <div *ngFor="let post of myPosts">
+
+            <div class="card m-2  p-2 w3-col m12" style="width:100%">
+                <div class="card-header " ><a href="#" class="text-dark">{{post.title}}</a></div>
+                <div class="card-body">
+                  <div>{{post.description}}</div>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="w3-button  w3-margin-bottom bg-danger" ><i class="fa fa-thumbs-up"></i>  Like</button> 
+                    <button type="button" data-toggle="collapse" href="#collapse4"class="w3-button  w3-margin-bottom bg-danger" ><i class="fa fa-comment"></i>  Comments</button> 
+                    <div id="collapse4" class="panel-collapse collapse">
+                        <div class="panel-body">
+                        Comments Section
+                        </div>
+                      </div>
+                  </div>
+              </div>
+        </div>
+      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+                
+           
+      <!-- End Middle Column -->
+      </div>
+      
+      <!-- Right Column -->
+      <div class="w3-col m2">
+        <div class="w3-card w3-round w3-white w3-center">
+          <div class="w3-container">
+            <p>Friend Request</p>
+            <img src="/" alt="profile picture" style="width:50%"><br>
+            <span>Jane Doe</span>
+            <div class="w3-row w3-opacity">
+              <div class="w3-half">
+                <button class="w3-button w3-block w3-green w3-section" title="Accept"><i class="fa fa-check"></i></button>
+              </div>
+              <div class="w3-half">
+                <button class="w3-button w3-block w3-red w3-section" title="Decline"><i class="fa fa-remove"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        
+        <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
+          <p>Card</p>
+        </div>
+        <br>
+        
+        
+        
+        
+      <!-- End Right Column -->
+      </div>
+      
+    <!-- End Grid -->
+    </div>
+    
+  <!-- End Page Container -->
+  </div>
+  <br>
+  
+  <!-- Footer -->
+  <footer class="w3-container w3-theme-d3 w3-padding-16 bg-danger">
+    <h5>Footer</h5>
+  </footer>
+  
+  
+ </body>  
+ </html>

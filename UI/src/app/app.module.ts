@@ -27,7 +27,8 @@ import { PostsComponent } from './posts/posts.component';
     RegisterComponent,
     HomeComponent,
     NotfoundComponent,
-    PostsComponent
+    PostsComponent,
+    
   ],
   imports: [
     BrowserModule,

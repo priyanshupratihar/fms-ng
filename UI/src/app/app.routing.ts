@@ -6,7 +6,6 @@ import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { NotfoundComponent } from "./notfound/notfound.component";
 import { PostsComponent } from "./posts/posts.component";
-
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'home', component: HomeComponent},

@@ -55,6 +55,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   //     });
   // }
 
+  
   private loadUser() {
     try {
       const data = jwt_decode(this.currentUser.token)
@@ -122,4 +123,5 @@ export class HomeComponent implements OnInit, OnDestroy {
       }
     );
   }
+  
 }
